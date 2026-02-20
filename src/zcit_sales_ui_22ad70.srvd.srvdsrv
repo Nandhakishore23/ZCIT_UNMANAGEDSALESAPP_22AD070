@@ -1,0 +1,5 @@
+@EndUserText.label: 'Sales Service Definition 22AD70'
+define service ZCIT_SALES_UI_22AD70 {
+  expose ZCIT_SALES_C_22AD70;
+  expose ZCIT_SALES_ITEM_C_22AD70;
+}

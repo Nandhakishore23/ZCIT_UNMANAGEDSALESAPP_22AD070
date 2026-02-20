@@ -1,0 +1,56 @@
+//projection;
+//strict ( 2 );
+//use draft;
+//
+//define behavior for ZCIT_SALES_C_22AD70 alias SalesOrderHdr
+//{
+//  use create;
+//  use update;
+//  use delete;
+//
+//  use action Edit;
+//  use action Resume;
+//  use action Prepare;
+//  use action Activate;
+//  use action Discard;
+//
+//  use association _SalesItem { create; with draft; }
+//}
+//
+//define behavior for ZCIT_SALES_ITEM_C_22AD70 alias SalesOrderItm
+//{
+//  use update;
+//  use delete;
+//
+//  use association _SalesHeader { with draft; }
+//}
+
+
+
+
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZCIT_SALES_C_22AD70 alias SalesOrderHdr
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+  use action Resume;
+
+  use association _SalesItem { create; with draft; }
+}
+
+define behavior for ZCIT_SALES_ITEM_C_22AD70 alias SalesOrderItm
+{
+  use update;
+  use delete;
+
+  use association _SalesHeader { with draft; }
+}
